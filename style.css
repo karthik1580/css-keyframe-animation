@@ -3,35 +3,10 @@ body{ margin: 0; padding: 0; background-color: skyblue;}
 .inneContainer{
     position: relative;
     width: 100%; height: 100%;
-    border:1px solid red;
+    
 }
-#overlay.animate{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: #000;
-    animation-name: day;
-    opacity: 1;
-    z-index: 5;
-    animation-duration: 10s;
-    animation-timing-function: ease;
-    animation-iteration-count: 1; 
-    animation-direction: normal;
-    animation-delay: 0s;
-    animation-play-state: running;
-    animation-fill-mode: forwards;
-}
-@keyframes day {  
-    0% {      
-      opacity: .8;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: .8;
-    }
-  }
+
+
 #sun{    
   
   width: 150px;
@@ -277,7 +252,7 @@ body{ margin: 0; padding: 0; background-color: skyblue;}
     position: absolute;
     margin: auto;
     margin-left: -20%;
-    bottom: 0;
+    bottom: 0;    
     background-color: green;
     border-radius: 100% 100% 0 0;
     z-index: 6;
@@ -348,6 +323,35 @@ body{ margin: 0; padding: 0; background-color: skyblue;}
     opacity: 1;
   }
 }
+
+#overlay.animate{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: black;
+    top: 0;
+    animation-name: day;
+    /* opacity: 1; */
+    /* z-index: 10; */
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1; 
+    animation-direction: normal;
+    animation-delay: 0s;
+   animation-play-state: running;
+    animation-fill-mode: forwards;
+}
+@keyframes day {  
+    0% {      
+      opacity: .8;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .8;
+    }
+  }
 .santaCoortoon{
   position: relative;
   width: 100%; height: 100%;
@@ -357,9 +361,9 @@ body{ margin: 0; padding: 0; background-color: skyblue;}
 #cartoonBody{
   position: absolute; 
   top: 30%; 
-  right: 20%;
+  right: 40%;
   z-index: 8; 
-  width: 12%; height: 35%; 
+  width: 12%; height: 30%; 
   background-image: url("images/body.png");
   background-position: center left;
   background-repeat: no-repeat;
@@ -401,56 +405,182 @@ body{ margin: 0; padding: 0; background-color: skyblue;}
     height: 100px; 
     top:50%;  
   }
-  50% {
-    transform: translate(25%, 50%);
-    width: 12%;
-    height: 35%;
-    right: 90%;
-  }
   100% {
-    transform: translate(50%, 90%);  
-    animation-name: move1; 
+    transform: translate(30%, 70%);
   }
 }
 
 .bobbing {
   position: absolute;  
   top: 50%;
-  left: -70%;
-  font-size: 200px;
+  left: -70%;  
+  background-color: #CA4246;
+  
+  /* Create the gradient. */
+   background-image: linear-gradient(
+        45deg,
+        #CA4246 16.666%, 
+        #E16541 16.666%, 
+        #E16541 33.333%, 
+        #F18F43 33.333%, 
+        #F18F43 50%, 
+        #8B9862 50%, 
+        #8B9862 66.666%, 
+        #476098 66.666%, 
+        #476098 83.333%, 
+        #A7489B 83.333%);  
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+      
   animation-name: bobbingAnim;
   animation-duration: 60s;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
+
+  animation-duration: 12s;
+  animation-timing-function: ease;
   animation-iteration-count: 1; 
+  animation-direction: normal;
+  animation-fill-mode: forwards;  
   z-index: 9; 
-  color: #fff;
+  left: 50%;
 }
 
 @keyframes bobbingAnim {
-  0% {
-      transform: translate(0px, 0px);
-      animation-timing-function:ease-in-out;
-      left: -70%;
-  }
-
-  20% {
-      transform: translate(0px, 12px);
-      animation-timing-function:ease-in-out;
-      left: 30%;
-  }
-
-  50% {
-    transform: translate(0px, 12px);
-    animation-timing-function:ease-in-out;
-    left: 30%;
+  0% {      
+      font-size: 0px;
   }
 
   100% {
-      transform: translate(0px, 12px);
-      animation-timing-function:ease-in-out;
-      top: 20%;
+      font-size: 100px;
+      top:20%;
       left: 30%;
   }
 }
+.treeBg{
+  position: absolute;  
+  background:transparent url(https://c.ekstatic.net/ecl/campaigns/christmas-2020/blue-tree-1.png) repeat top left;
+  background-size: 79%;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  bottom: 35%;
+  z-index: 8;
+}
+
+#tree{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 5px solid black; 
+  box-sizing: border-box; 
+  z-index: 8;
+  
+}
+#tree .tree1,
+#tree .tree2,
+#tree .tree3,
+#tree .house, 
+#tree .house1,
+#tree .house2,
+#tree .house3{ 
+  background:transparent url(https://c.ekstatic.net/ecl/campaigns/christmas-2020/christmas-2020-sprite-o-01.png) repeat top left;
+  background-size: cover;
+  position: absolute;
+  bottom: 24%;
+}
+
+#tree .tree1{
+  width: 20%;
+  height: 25%;  
+  left: 0;
+  
+}
+#tree .tree2{
+  width: 25%;
+  height: 30%;
+  right: 0;
+  background-position: left 30%; 
+  bottom: 20%; 
+}
+#tree .tree3{
+  width: 25%;
+  height: 30%;
+  left: 30%;
+  background-position: left 30%; 
+  bottom: 20%; 
+}
+#tree .house{
+  width: 30%;
+  height: 35%;
+  left: 10%;
+  background-position: left 55%;
+}
+#tree .house1{
+  width: 20%;
+  height: 25%;
+  left: 50%;
+  background-position: left 55%;
+}
+#tree .house2{
+  width: 25%;
+  height: 30%;
+  left: 60%;
+  background-position: left 55%;
+}
+#tree .house3{
+  width: 35%;
+  height: 30%;
+  left: 60%;
+  background-position: left 50%;
+  bottom: 0%; 
+}
+.flight {
+  background:transparent url(https://c.ekstatic.net/ecl/campaigns/christmas-2020/christmas-2020-sprite-o-01.png) repeat top left;
+  height: 57px;
+  width: 116px;
+  position: absolute;
+  background-size: cover;
+  background-position: left bottom;
+  top: 15%;
+  right: 29%;
+  z-index: 15;
+  -webkit-transform: perspective(600px) rotate(10deg);
+  transform: perspective(600px) rotate(10deg);
+  -webkit-animation: flight-animation 35s infinite;
+  animation: flight-animation 35s infinite;
+}
+
+@keyframes flight-animation {
+  0% {
+    right: -10%;
+    left: auto;
+    transform: perspective(600px) rotate(0) translate(0) scale(.5);
+    top: 7%;
+}
+10% {
+    transform: perspective(600px) rotate(2deg) translate(0) scale(.8);
+    top: 10%;
+}
+20% {
+    transform: perspective(600px) rotate(4deg) translate(0) scale(1.5);
+    top: 12%;
+}
+30% {
+    transform: perspective(600px) rotate(8deg) translate(0) scale(1.6);
+    top: 16%;
+}
+60% {
+    transform: perspective(600px) rotate(12deg) translate(0) scale(1.8);
+    top: 16%;
+}
+80% {
+    transform: perspective(600px) rotate(10deg) scale(1.6);
+}
+100% {
+    right: 100%;
+    transform: perspective(600px) rotate(10deg) scale(1.4);
+}
+}
+
 
